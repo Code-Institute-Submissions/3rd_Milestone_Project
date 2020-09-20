@@ -1,0 +1,30 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<h3>Want to edit a recipe?</h3>
+    <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="recipe_title" name="recipe_title" placeholder="What's your recipe's name?" value="{{ recipe.recipe_title }}">
+        </div>
+        <div class="form-group">
+            <label for="contributor_name">Contributor's name</label>
+            <input type="text" class="form-control" id="contributor_name" name="contributor_name" placeholder="We want to give you credit." value="{{ recipe.contributor_name }}">
+        </div>
+        <div class="form-row">
+            <label for="ingredients">Ingredients</label>
+            <input type="textarea" class="form-control" id="ingredients" name="ingredients" placeholder="Share the secret ingredients." value="{{ recipe.ingredients }}">
+        </div>
+        <div class="form-group">
+            <label for="procedure">Procedure</label>
+            <input type="textarea" class="form-control" id="procedure" name="procedure" placeholder="So how do we do it?" value="{{ recipe.procedure }}">
+        </div>
+         <div class="form-group">
+            <label for="image">Recipe's photo</label>
+            <input type="url" class="form-control" id="image_url" name="image_url" placeholder="Curious how it looks" value="{{ recipe.image_url }}">
+        </div>
+        <button type="edit" class="btn btn-primary">Edit now</button>
+    </form>
+
+
+{% endblock %} 
