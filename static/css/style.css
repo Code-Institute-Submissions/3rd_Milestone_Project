@@ -1,4 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body{
     margin: 0;
     font-family: sans-serif;
 }
+
+
+/*Font-style*/
+
+.nav-wrapper{
+    background-color: #c2793d; 
+}
+
+nav .brand-logo h1{
+    color: #ffdead;
+    font-family: "Playfair Display", sans-serif;
+    margin: -0.2rem 0 1.68rem 0;
+}
+
+.footer-area{
+    background-color:  #c2793d;
+}
+
+nav ul a, .footer-area a, .copyright{
+    color: #ffdead;
+    font-family: "Roboto", sans-serif;
+}
+
+.recipe-header h3{
+    color: #7b3d11;
+    font-family: "Playfair Display", sans-serif;
+}
+
+/*card*/
+
+.img
