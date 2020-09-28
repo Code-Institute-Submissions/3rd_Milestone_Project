@@ -6,6 +6,8 @@ from flask import Flask, redirect, request, render_template, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
+
+
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'recipeDB'
@@ -14,11 +16,25 @@ app.config["MONGO_URI"] = os.environ.get('MONGO_URI', 'mongodb://localhost')
 mongo = PyMongo(app)
 
 @app.route('/')
-@app.route('/get_recipes')
-def get_recipes():
+@app.route('/get_recipes_and_products')
+def get_recipes_and_products():
     return render_template('index.html',
         recipes=mongo.db.recipes.find(),
         products=mongo.db.products.find())
+
+
+@app.route('/get_all_recipes')
+def get_all_recipes():
+    return render_template('all-recipes.html',
+        recipes=mongo.db.recipes.find())
+
+@app.route('/whole_recipe/<recipe_id>')
+def whole_recipe(recipe_id):
+    the_recipe=mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    return render_template('whole-recipe.html', 
+                            recipe=the_recipe,
+                            products=mongo.db.products.aggregate([ { '$sample': { 'size': 3 } } ]))
+
 
 
 @app.route('/add_recipe')
@@ -56,6 +72,8 @@ def update_recipe(recipe_id):
 def delete_recipe(recipe_id):
     mongo.db.recipes.delete_one({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
+
+
 
 
 if __name__ == '__main__':

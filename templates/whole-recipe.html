@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="recipe-header">
+        <h3>{{recipe.recipe_title}}</h3>
+        <h5>For this recipe, we recommend:</h5>
+    </div>
+    {% for product in products %}
+        {% if loop.index <= 1 %}
+         <div class="row">
+            <div class="col s12 m7">
+                <div class="card">
+                    <div class="card-image">
+                    <a href="#">
+                    <img src="{{ product.product_photo }}"></a>
+                    <span class="card-title">{{ product.product_name }}</span>
+                    </div>
+                    <div class="card-content">
+                    <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                    <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    <div class="product-link">
+        <h3>Buy product <span><a href="https://www.amazon.com/baking-tools-accessories/b?ie=UTF8&node=289719">here</a></span></h3>
+    <br>
+     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-primary">edit recipe</a>
+                            </div>
+    
+{% endblock %}

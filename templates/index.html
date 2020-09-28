@@ -4,21 +4,31 @@
     <div class="recipe-header text-center">
         <h3>Recipe</h3>
     </div>
-    <div class="container-fluid justify-content-around">
+    <div class="container-fluid justify-content-around align-items-center">
         {% for recipe in recipes %}
-            {% if loop.index >= 3 %}
-            <div class="col s12 m7">
-                <div class="card medium">
-                    <img src="{{recipe.image_url}}" class="card-image" alt="food">
-                        <h5 class="card-title">{{recipe.recipe_title}}</h5>
-                         <div class="card-content"></div>
-                         <div class="card-action">
-                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-primary">Edit recipe</a>
-                        </div>
+            {% if loop.index <= 3 %}
+                <div class="card small">
+                    <a href="{{ url_for('whole_recipe', recipe_id=recipe._id)}}">
+                        <img src="{{recipe.image_url}}" class="card-image responsive-img" alt="food">
+                            <h5 class="card-title">{{recipe.recipe_title}}</h5>
+                                <div class="card-content"></div>
+                                <div class="card-action"></div>
+                    </a>
                 </div>
-                </div>
-    </div>
             {% endif %}
         {% endfor %}
-
+    </div>
+    <div class="product-header">
+        <h3>Products</h3>
+        {% for product in products %}
+            {% if loop.index <= 3 %}
+            <div class="card" style="width: 18rem;">
+                <img src="{{product.product_photo}}" class="card-img-top" alt="food">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.product_name}}</h5>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endblock %}

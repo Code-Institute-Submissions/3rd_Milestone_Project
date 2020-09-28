@@ -23,8 +23,12 @@
             <label for="image">Recipe's photo</label>
             <input type="url" class="form-control" id="image_url" name="image_url" placeholder="Curious how it looks" value="{{ recipe.image_url }}">
         </div>
+        <span>All good?</span>
+        <br>
         <button type="edit" class="btn btn-primary">Edit now</button>
     </form>
+        <br>
+        <span>Changed your mind?</span>
         <br>
             <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }} " class="btn btn-warning" id="delete">Delete now
             </a>

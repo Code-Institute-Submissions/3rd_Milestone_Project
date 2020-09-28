@@ -4,6 +4,7 @@
 body{
     margin: 0;
     font-family: sans-serif;
+    background-color: #f7d7a8;
 }
 
 
@@ -34,5 +35,9 @@ nav ul a, .footer-area a, .copyright{
 }
 
 /*card*/
-
-.img
+.card-image{
+    width: 50%;
+    height: auto;
+    background-position: cover;
+    overflow: hidden;
+}
