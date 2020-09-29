@@ -16,8 +16,8 @@ app.config["MONGO_URI"] = os.environ.get('MONGO_URI', 'mongodb://localhost')
 mongo = PyMongo(app)
 
 @app.route('/')
-@app.route('/get_recipes_and_products')
-def get_recipes_and_products():
+@app.route('/index')
+def index():
     return render_template('index.html',
         recipes=mongo.db.recipes.find(),
         products=mongo.db.products.find())
@@ -46,7 +46,7 @@ def add_recipe():
 def insert_recipe():
     recipes=mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
-    return redirect(url_for('get_recipes'))
+    return redirect(url_for('get_all_recipes'))
 
 
 @app.route('/edit_recipe/<recipe_id>')

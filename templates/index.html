@@ -4,30 +4,35 @@
     <div class="recipe-header text-center">
         <h3>Recipe</h3>
     </div>
-    <div class="container-fluid justify-content-around align-items-center">
+    <div class="recipe container row d-flex justify-content-xs-center">
         {% for recipe in recipes %}
             {% if loop.index <= 3 %}
-                <div class="card small">
-                    <a href="{{ url_for('whole_recipe', recipe_id=recipe._id)}}">
-                        <img src="{{recipe.image_url}}" class="card-image responsive-img" alt="food">
-                            <h5 class="card-title">{{recipe.recipe_title}}</h5>
-                                <div class="card-content"></div>
-                                <div class="card-action"></div>
-                    </a>
+                <div class="recipe col-12 col-md-4">
+                    <div class="card all-cards">
+                        <img src="{{recipe.image_url}}" class="card-img-top all-card-photos" alt="food">
+                        <div class="card-body">
+                            <p class="card-title">{{recipe.recipe_title}}</p>
+                        </div>
+                    </div>
+                <a href="{{ url_for('whole_recipe', recipe_id=recipe._id)}}" class="btn btn-primary">View recipe</a>
                 </div>
             {% endif %}
         {% endfor %}
     </div>
-    <div class="product-header">
+    <div class="recipe-header text-center">
         <h3>Products</h3>
+    </div>
+    <div class="product container row d-flex">
         {% for product in products %}
             {% if loop.index <= 3 %}
-            <div class="card" style="width: 18rem;">
-                <img src="{{product.product_photo}}" class="card-img-top" alt="food">
-                <div class="card-body">
-                    <h5 class="card-title">{{product.product_name}}</h5>
+                <div class="product col-12 col-md-4">
+                    <div class="card all-cards">
+                        <img src="{{product.product_photo}}" class="card-img-top all-card-photos" alt="food">
+                        <div class="card-body">
+                            <p class="card-title">{{product.product_name}}</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
             {% endif %}
         {% endfor %}
     </div>

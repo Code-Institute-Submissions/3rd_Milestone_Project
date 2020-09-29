@@ -15,21 +15,23 @@
     
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo ml-2">
+            <a href="{{ url_for('index') }}" class="brand-logo ml-2">
             <h1>Chocolatier</h1></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#">All Recipes</a></li>
-                <li><a href="#">Add Recipe</a></li>
-                <li><a href="#">Our Products</a></li>
+            <ul class="navbar-link right hide-on-med-and-down">
+            {% from "macros.html" import nav_link with context %}
+                {{ nav_link('index', 'Home') }}
+                {{ nav_link('get_all_recipes', 'All Recipes') }}
+                {{ nav_link('add_recipe', 'Add Recipe') }}
             </ul>
         </div>
     </nav>
 
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="#">Recipe</a></li>
-        <li><a href="#">Add Recipe</a></li>
-        <li><a href="#">Our Products</a></li>
+    <ul class="sidenav navbar-link" id="mobile-demo">
+        {% from "macros.html" import nav_link with context %}
+                {{ nav_link('index', 'Home') }}
+                {{ nav_link('get_all_recipes', 'All Recipes') }}
+                {{ nav_link('add_recipe', 'Add Recipe') }}
     </ul>
     <div class="d-md-none d-flex container-fluid mt-2 mb-2 ">
         <a href="#"><img src="https://i.imgur.com/kTkBm1T.jpg" title="source: imgur.com" class="img-fluid"></a>
@@ -42,16 +44,17 @@
         </div>
     </div>
 
-    <div class="container">
+   
     {% block content %} {% endblock %}
-    </div>
+    
+   
 
     <footer class="footer-area container-fluid">
         <div class="container">
             <div class="row m-0">
                 <div class="col-md-6 col-sm-12 col-xs-12 mt-5">
                     <div class="single_ftr">
-                        <ul class="footer-links">
+                        <ul class="footer-links text-center">
                             <li><a href="#">HOME</a></li>
                             <li><a href="#">ALL RECIPES</a></li>
                             <li><a href="#">SUBMIT RECIPE</a></li>
@@ -59,26 +62,18 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-sm-12 col-xs-12 mt-5">
-                    <div class="single_ftr content" id="subscribe">
-                        <div class="newsletter_form row">
-                            <div class="col-12">
-                                <p class="pl-3 font-weight-bold">WANT TO ADD A NEW RECIPE?</p>
-                                <form method="POST" action="" class="form-inline" name="new-recipe">
-                                    <span class="input-group-btn">
-                                        <button class="btn" type="submit"><i class="fas fa-check"></i></button>
-                                    </span>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="text-center">
+                        <b>WANT TO ADD A NEW RECIPE? Click here!</b> 
+                        <a href="{{ url_for('add_recipe')}}" class="btn-floating btn-large">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
-
         <div class="social-media">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="col-6 offset-3 d-flex justify-content-around mt-5">   
                     <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i
                                 class="fa fa-facebook"></i></a>

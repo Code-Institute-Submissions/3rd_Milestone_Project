@@ -24,7 +24,7 @@ nav .brand-logo h1{
     background-color:  #c2793d;
 }
 
-nav ul a, .footer-area a, .copyright{
+nav ul a, .footer-area a, .footer-area p, .copyright{
     color: #ffdead;
     font-family: "Roboto", sans-serif;
 }
@@ -34,10 +34,20 @@ nav ul a, .footer-area a, .copyright{
     font-family: "Playfair Display", sans-serif;
 }
 
-/*card*/
-.card-image{
-    width: 50%;
-    height: auto;
-    background-position: cover;
+
+.all-cards{
+    width: 18rem;
+    height: 22rem;
+}
+
+
+.all-card-photos{
+    width: 18rem;
+    height: 14rem;
     overflow: hidden;
+    object-fit: cover;
+}
+
+.card .card-title{
+    font-size: 19px;
 }
