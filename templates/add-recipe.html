@@ -2,7 +2,7 @@
 {% block content %}
 
     <div class="recipe-header text-center">
-        <h3>Want to add a recipe?</h3>
+    <h3 >Want to add a recipe?</h3>
     </div>
     <div class="container">
         <form action="{{ url_for('insert_recipe') }}" method="POST">
@@ -14,23 +14,21 @@
                 <label for="contributor_name">Contributor's name</label>
                 <input type="text" class="form-control" id="contributor_name" name="contributor_name" placeholder="We want to give you credit.">
             </div>
-            
             <div class="input-field col-12">
                 <label for="ingredients">Ingredients</label>
-                <textarea class="materialize-textarea" id="ingredients" name="ingredients">Share the secret ingredients</textarea>
+                <textarea class="materialize-textarea" id="ingredients" name="ingredients" placeholder="Share the secret ingredients"></textarea>
             </div>
-            
-            
             <div class="input-field col-12">
                 <label for="procedure">Procedure</label>
-                <textarea class="materialize-textarea" id="procedure" name="procedure"> So how do we do it?"</textarea>
+                <textarea class="materialize-textarea" id="procedure" name="procedure" placeholder="So how do we do it?"></textarea>
             </div>
-             
             <div class="form-group">
                 <label for="image">Recipe's photo</label>
                 <input type="url" class="form-control" id="image_url" name="image_url" placeholder="Curious how it looks">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="buttonholder text-center">
+            <div class="edit-button btn btn-primary mb-3">Submit</div>
+            </div>
         </form>
     </div>
 

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
 
 body{
     margin: 0;
@@ -10,9 +11,6 @@ body{
 
 /*Font-style*/
 
-.nav-wrapper{
-    background-color: #c2793d; 
-}
 
 nav .brand-logo h1{
     color: #ffdead;
@@ -20,19 +18,49 @@ nav .brand-logo h1{
     margin: -0.2rem 0 1.68rem 0;
 }
 
-.footer-area{
-    background-color:  #c2793d;
-}
-
 nav ul a, .footer-area a, .footer-area p, .copyright{
     color: #ffdead;
     font-family: "Roboto", sans-serif;
 }
 
-.recipe-header h3{
+ul#mobile-demo.sidenav.navbar-link li{
+    color: #7b3d11;
+    font-family: "Merriweather", sans-serif;
+}
+
+.recipe-header h3, h5{
     color: #7b3d11;
     font-family: "Playfair Display", sans-serif;
+    text-decoration-color: #7b3d11;
+    text-decoration: underline;
 }
+
+p{
+    font-family:"Roboto", sans-serif;
+}
+
+.product-name{
+    font-family: "Merriweather", sans-serif;
+}
+
+::placeholder {
+  color: #676b6e;
+  opacity: 1;
+}
+
+
+.nav-wrapper{
+    background-color: #c2793d; 
+}
+
+.sidenav{
+    background-color: #f7d7a8
+}
+
+.footer-area{
+    background-color:  #c2793d;
+}
+
 
 
 .all-cards{
@@ -50,4 +78,19 @@ nav ul a, .footer-area a, .footer-area p, .copyright{
 
 .card .card-title{
     font-size: 19px;
+}
+
+ul.ingredient-list:not(.browser-default)>li {
+    list-style-type: disc;
+}
+
+ul:not(.browser-default) {
+    list-style-type: decimal;
+}
+
+.product-image{
+    width: 30rem;
+    height: 18rem;
+    object-fit: cover;
+    overflow: hidden;
 }
