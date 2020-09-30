@@ -65,13 +65,13 @@ def update_recipe(recipe_id):
         'procedure': request.form.get('procedure'),
         'image_url': request.form.get('image_url')
     })
-    return redirect(url_for('get_recipes'))
+    return redirect(url_for('get_all_recipes'))
 
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     mongo.db.recipes.delete_one({'_id': ObjectId(recipe_id)})
-    return redirect(url_for('get_recipes'))
+    return redirect(url_for('get_all_recipes'))
 
 
 

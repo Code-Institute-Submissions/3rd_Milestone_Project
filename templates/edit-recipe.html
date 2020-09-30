@@ -1,7 +1,10 @@
 {% extends 'base.html' %} 
 {% block content %}
 
-<h3>Want to edit a recipe?</h3>
+    <div class="recipe-header text-center">
+        <h3>Want to edit a recipe?</h3>
+    </div>
+    <div class="container">
     <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST">
         <div class="form-group">
             <label for="title">Title</label>
@@ -11,13 +14,17 @@
             <label for="contributor_name">Contributor's name</label>
             <input type="text" class="form-control" id="contributor_name" name="contributor_name" placeholder="We want to give you credit." value="{{ recipe.contributor_name }}">
         </div>
-        <div class="form-row">
+        <div class="input-field">
             <label for="ingredients">Ingredients</label>
-            <input type="textarea" class="form-control" id="ingredients" name="ingredients" placeholder="Share the secret ingredients." value="{{ recipe.ingredients }}">
+            <textarea class="form-control materialize-textarea" id="ingredients" name="ingredients" placeholder="Share the secret ingredients.">
+            {{ recipe.ingredients }}
+            </textarea>
         </div>
-        <div class="form-group">
+        <div class="input-field">
             <label for="procedure">Procedure</label>
-            <input type="textarea" class="form-control" id="procedure" name="procedure" placeholder="So how do we do it?" value="{{ recipe.procedure }}">
+            <textarea class="form-control materialize-textarea" id="procedure" name="procedure" placeholder="So how do we do it?">
+            {{ recipe.procedure }}
+            </textarea>
         </div>
          <div class="form-group">
             <label for="image">Recipe's photo</label>
@@ -32,4 +39,5 @@
         <br>
             <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }} " class="btn btn-warning" id="delete">Delete now
             </a>
+    </div>
 {% endblock %} 
