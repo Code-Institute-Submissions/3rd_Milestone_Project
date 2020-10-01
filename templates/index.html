@@ -7,36 +7,41 @@
             </div>
         </div>
     </div>
-    <div class="recipe-header text-center">
+    <div class="title-header text-center">
         <h3>Recipe</h3>
     </div>
-    <div class="recipe container row d-flex justify-content-xs-center">
+    <div class="recipe container row d-flex">
         {% for recipe in recipes %}
             {% if loop.index <= 3 %}
-                <div class="recipe col-12 col-md-4">
+                <div class="recipe d-flex justify-content-center col-12 col-md-4">
                     <div class="card all-cards">
-                        <img src="{{recipe.image_url}}" class="card-img-top all-card-photos" alt="food">
+                        <a href="{{ url_for('whole_recipe', recipe_id=recipe._id)}}">
+                            <img src="{{recipe.image_url}}" class="card-img-top all-card-photos" alt="food">
+                        </a>
                         <div class="card-body">
                             <p class="card-title">{{recipe.recipe_title}}</p>
                         </div>
+                        <a href="{{ url_for('whole_recipe', recipe_id=recipe._id)}}" class="btn btn-primary">View recipe</a>
                     </div>
-                <a href="{{ url_for('whole_recipe', recipe_id=recipe._id)}}" class="btn btn-primary">View recipe</a>
                 </div>
             {% endif %}
         {% endfor %}
     </div>
-    <div class="recipe-header text-center">
+    <div class="title-header text-center">
         <h3>Products</h3>
     </div>
     <div class="product container row d-flex">
         {% for product in products %}
             {% if loop.index <= 3 %}
-                <div class="product col-12 col-md-4">
+                <div class="product col-12 col-md-4 d-flex justify-content-center">
                     <div class="card all-cards">
-                        <img src="{{product.product_photo}}" class="card-img-top all-card-photos" alt="food">
+                        <a href="https://www.amazon.com/baking-tools-accessories/b?ie=UTF8&node=289719" target="_blank">
+                            <img src="{{product.product_photo}}" class="card-img-top all-card-photos" alt="food">
+                        </a>
                         <div class="card-body">
                             <p class="card-title">{{product.product_name}}</p>
                         </div>
+                        <a href="https://www.amazon.com/baking-tools-accessories/b?ie=UTF8&node=289719" target="_blank" class="btn btn-primary">Buy here</a>
                     </div>
                 </div>
             {% endif %}

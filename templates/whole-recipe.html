@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="container row">
-        <div class="recipe-header col-12 text-center mb-3">
-            <h3 >{{recipe.recipe_title}}</h3>
+        <div class=" d-flex col-12 text-center mb-3">
+            <h3 >{{ recipe.recipe_title }}</h3>
         </div>
         <div class="col-12 col-sm-4">
-        <h5 class="recipe-header">Ingredients</h5>
+        <h5 class="title-header">Ingredients</h5>
+        <h5>Serving: {{ recipe.serving_size }}</h5>
             <ul class="ingredient-list">
                 {% for ing in recipe.ingredients.splitlines() %}
                         <li>{{ ing }}</li>
@@ -16,7 +17,7 @@
             <img src="{{ recipe.image_url }}" class="whole-recipe-image img-fluid z-depth-5" alt="food">
         </div>
         <div>
-            <h5 class="recipe-header">Procedure</h5> 
+            <h5 class="title-header procedure-header">Procedure</h5> 
             <div>
                 <ul class="procedure-list">
                     <div>
@@ -36,18 +37,20 @@
         <h5>Product we recommend:</h5>
             {% for product in products %}
                 {% if loop.index <= 1 %}
-                <div class="container col-12 col-sm-8">
-                    <h5 class="product-name mb-2">{{product.product_name}}</h5>
-                        <img src="{{product.product_photo}}" class="product-image img-fluid z-depth-5" alt="tools">
-                </div>
-                {% endif %}
-            {% endfor %}
-                <div class="product-link col-12 col-sm-4">           
-                    <h5>Buy product 
-                        <span><a href="https://www.amazon.com/baking-tools-accessories/b?ie=UTF8&node=289719">here</a></span>
-                    </h5>
-                    <br>
-                    <p>We recommend only Chocolatier-approved baking tools for your baking needs! Look no further. We got your baking needs covered.</p>
+                <div class="row">
+                    <div class="container col-12 col-sm-8">
+                        <h5 class="product-name mb-2">{{ product.product_name }}</h5>
+                            <img src="{{product.product_photo}}" class="product-image img-fluid z-depth-5" alt="tools">
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                    <div class="product-link col-12 col-sm-4">           
+                        <h5>Buy product 
+                            <span><a href="https://www.amazon.com/baking-tools-accessories/b?ie=UTF8&node=289719" target="_blank">here</a></span>
+                        </h5>
+                        <br>
+                        <p>We recommend only Chocolatier-approved baking tools for your baking needs! Look no further. We got your baking needs covered.</p>
+                    </div>
                 </div>
     </div>
 {% endblock %}

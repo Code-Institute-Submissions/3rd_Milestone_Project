@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <div class="recipe-header text-center">
+    <div class="title-header text-center">
         <h3>All Recipes</h3>
     </div>
     <div class="container row">
     <br>
         {% for recipe in recipes %}
-            <div class="all-recipe col-12 col-md-4">
+            <div class="all-recipe d-flex justify-content-center col-12 col-md-4">
                 <div class="card all-cards">
                     <img src="{{recipe.image_url}}" class="card-img-top all-card-photos" alt="food">
                     <div class="card-body">
                         <p class="card-title">{{recipe.recipe_title}}</p>  
                     </div>
+                    <a href="{{ url_for('whole_recipe', recipe_id=recipe._id)}}" class="btn btn-primary">View recipe</a>
                 </div>
-                <a href="{{ url_for('whole_recipe', recipe_id=recipe._id)}}" class="btn btn-primary">View recipe</a>
             </div>
         {% endfor %}
     </div>
