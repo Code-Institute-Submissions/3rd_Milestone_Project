@@ -3,60 +3,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
 
 
-body{
+body {
     font-family: sans-serif;
     background-color: #f7d7a8;
     margin: 0;
 }
 
-
-/*Font-style*/
-
-
-nav .brand-logo h1{
-    color: #ffdead;
-    font-family: "Playfair Display", sans-serif;
-    margin: -0.2rem 0 1.68rem 0;
-}
-
-nav ul a, .footer-area a, .footer-area p, .copyright{
-    color: #ffdead;
-    font-family: "Roboto", sans-serif;
-}
-
-ul#mobile-demo.sidenav.navbar-link li{
-    color: #7b3d11;
-    font-family: "Merriweather", sans-serif;
-}
-
-h3, h5{
+h3, h5 {
     color: #7b3d11;
     font-family: "Playfair Display", sans-serif;
 }
 
-.title-header{
-    text-decoration: underline;
-    text-decoration-color: #7b3d11;
-}
-
-p{
+p {
     font-family:"Roboto", sans-serif;
 }
 
-.product-name, .affirm-question{
-    font-family: "Merriweather", sans-serif;
-}
-
-::placeholder {
-  color: #676b6e;
-  opacity: 1;
-}
-
-.card-title{
-    color: #7b3d11;
-    font-family:"Roboto", sans-serif;
-    text-align: center;
-}
+/***  Navbar  ****/
 
 .nav-wrapper{
     background-color: #c2793d; 
@@ -66,20 +28,54 @@ p{
     background-color: #f7d7a8
 }
 
-.footer-area{
-    background-color:  #c2793d;
+nav ul a{
+    color: #ffdead;
+    font-family: "Roboto", sans-serif;
 }
 
+nav ul a:hover {
+    color: #dad5d2;
+    text-decoration: none;
+}
 
+ul#mobile-demo.sidenav.navbar-link li {
+    color: #7b3d11;
+    font-family: "Merriweather", sans-serif;
+}
+
+.sidenav a:hover, .sidenav-trigger i:hover {
+    color: #7b3d11;
+    text-decoration: none;
+}
+
+/***  Banner  ***/
+
+.banner{
+    background-color: #fffbf2;
+}
+
+.banner.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.banner img{
+    width: 83vw;
+    height: 18vh;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+/***  Cards  ***/
 
 .all-cards{
     width: 18rem;
     height: 22rem;
-    background-color: rgb(248, 202, 145);
+    background-color: #f8ca91;
 }
 
 .all-cards:hover{
-    background-color: rgb(248, 243, 237);
+    background-color: #f8f3ed;
 }
 
 .all-card-photos{
@@ -88,13 +84,36 @@ p{
     object-fit: cover;
 }
 
-.card .card-title{
+.card-title {
+    color: #7b3d11;
+    font-family:"Roboto", sans-serif;
+    text-align: center;
+}
+
+.card .card-title {
     font-size: 19px;
 }
 
-.btn, .btn-floating{
-    background-color: #f7baba;
+/***  Recipe form  ****/
+
+textarea.materialize-textarea{
+    min-height: 6rem;
 }
+
+.affirm-question {
+    font-family: "Merriweather", sans-serif;
+}
+
+.form-control:focus{
+    background-color: #f7d7a8;
+}
+
+::placeholder {
+  color: #676b6e;
+  opacity: 1;
+}
+
+/****   List    ****/
 
 ul.ingredient-list{
     padding-left: 12px;
@@ -108,6 +127,7 @@ ul:not(.browser-default) {
     list-style-type: decimal;
 }
 
+/***   Product     ****/
 .product-image{
     width: 30rem;
     height: 18rem;
@@ -123,6 +143,21 @@ ul.procedure-list{
     padding-left: 12px;
 }
 
+.title-header {
+    text-decoration: underline;
+    text-decoration-color: #7b3d11;
+}
+
+.index-header a h3 {
+    text-decoration-color: #7b3d11;
+    text-decoration: underline;
+}
+
+.product-name {
+    font-family: "Merriweather", sans-serif;
+}
+
+/****   Modal    ****/
 .modal-content{
     background-color: #f7d7a8; 
 }
@@ -135,6 +170,56 @@ ul.procedure-list{
     height: 189px;
 }
 
-.modal-close, .modal-close{
-    background-color: #f7d7a8;
+.modal-close, .modal-delete{
+    background-color: #c2793d; 
+    color:  #fce8cc;
+}
+
+.modal-close:hover, .modal-delete:hover {
+    text-decoration: none;
+    background-color: #7b3d11;
+    color:  #fffbf2;
+}
+
+/***  Footer   ***/
+.footer-area {
+    background-color:  #c2793d;
+}
+
+.footer-area a, .footer-area p, .copyright {
+    color: #ffdead;
+    font-family: "Roboto", sans-serif;
+}
+
+
+/***   Button   ***/ 
+.btn, .btn-floating {
+    background-color: #f7baba;
+}
+
+.btn:hover, .btn-floating:hover, .btn-floating i:hover {
+    background-color:  #edf7f2;
+    color: #7b3d11;
+}
+
+.btn:not(:disabled):not(.disabled):active {
+    background-color:  #edf7f2;
+    color: #7b3d11;
+}
+
+/****   Icons   ****/
+.social-media i:hover{
+    transform: scale(2);
+    color: #fffbf2; 
+}
+
+/****  Media Queries  ****/
+
+@media only screen and (max-width: 576px){
+    .banner img{
+        width: 100vw;
+        height: 18vh;
+        object-fit: cover;
+        overflow: hidden;
+    }
 }

@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="d-none d-lg-block">
-        <div class="parallax-container">
+    <div class="d-none d-lg-block col-lg-8 offset-2">
+        <div class="parallax-container ">
             <div class="parallax mt-2 mb-2">
-                <a href="#"><img src="https://i.imgur.com/kTkBm1T.jpg" title="source: imgur.com" class="img-fluid"></a>
+                <img src="https://i.imgur.com/kTkBm1T.jpg" title="source: imgur.com" class="img-fluid">
             </div>
         </div>
     </div>
-    <div class="title-header text-center">
-        <h3>Recipe</h3>
+    <div class="d-md-none d-flex container-fluid mt-2 mb-2">
+        <img src="https://i.imgur.com/kTkBm1T.jpg" title="source: imgur.com" class="img-fluid">
+    </div>
+    <div class="index-header text-center">
+        <a href="{{ url_for('get_all_recipes') }}"><h3>Recipes</h3></a>
     </div>
     <div class="recipe container row d-flex">
         {% for recipe in recipes %}
@@ -27,8 +30,8 @@
             {% endif %}
         {% endfor %}
     </div>
-    <div class="title-header text-center">
-        <h3>Products</h3>
+    <div class="index-header text-center">
+        <a href="https://www.amazon.com/baking-tools-accessories/b?ie=UTF8&node=289719" target="_blank"><h3>Products</h3></a>
     </div>
     <div class="product container row d-flex">
         {% for product in products %}
