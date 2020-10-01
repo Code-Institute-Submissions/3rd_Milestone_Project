@@ -8,23 +8,23 @@
     <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" id="#commentForm" method="POST">
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control" id="recipe_title" name="recipe_title" placeholder="What's your recipe's name?" value="{{ recipe.recipe_title }}">
+            <input type="text" class="form-control" id="recipe_title" name="recipe_title" placeholder="What's your recipe's name?" minlength="2" required value="{{ recipe.recipe_title }}">
         </div>
         <div class="form-group">
             <label for="serving_size">Servings: </label>
-            <input type="text" class="form-control" id="serving_size" name="serving_size" placeholder="We want to give you credit." value="{{ recipe.serving_size }}">
+            <input type="number" class="form-control" min="1" max="100" id="serving_size" name="serving_size" placeholder="How much does this recipe make? Enter a number." required value="{{ recipe.serving_size }}">
         </div>
         <div class="input-field">
             <label for="ingredients">Ingredients</label>
-            <textarea class="form-control materialize-textarea" id="ingredients" name="ingredients" placeholder=" placeholder Share the secret ingredients.">{{ recipe.ingredients }}</textarea>
+            <textarea class="form-control materialize-textarea" id="ingredients" name="ingredients" placeholder=" Share the secret ingredients. Press enter after each item." minlength="5" required>{{ recipe.ingredients }}</textarea>
         </div>
         <div class="input-field">
             <label for="procedure">Procedure</label>
-            <textarea class="form-control materialize-textarea" id="procedure" name="procedure" placeholder="placeholder So how do we do it?">{{ recipe.procedure }}</textarea>
+            <textarea class="form-control materialize-textarea" id="procedure" name="procedure" placeholder="So how do we do it? Press enter after each step." minlength="5" required>{{ recipe.procedure }}</textarea>
         </div>
          <div class="form-group">
             <label for="image">Recipe's photo</label>
-            <input type="url" class="form-control" id="image_url" name="image_url" placeholder="Curious how it looks" value="{{ recipe.image_url }}">
+            <input type="url" class="form-control" id="image_url" name="image_url" placeholder="Curious how it looks. Enter image url." required value="{{ recipe.image_url }}">
         </div>
         
         <div class="text-center">
@@ -43,11 +43,11 @@
                 <div id="modal1" class="modal col-8 col-md-4">
                     <div class="modal-content">
                         <h4>Delete Recipe</h4>
-                        <p>Please confirm to delete recipe</p>
+                        <p>Please confirm to delete recipe.</p>
                     </div>
                     <div class="modal-footer d-flex justify-content-around">
                         <button type="button" class="modal-close btn-flat">Cancel</button>
-                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="modal-delete btn-flat">Agree</a>
+                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="modal-delete btn-flat">Delete</a>
                     </div>
                 </div>
             </div>

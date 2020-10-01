@@ -32,8 +32,10 @@
         {{ nav_link('add_recipe', 'Submit Recipe') }}
     </ul>
     <!-- banner  -->
-    <div class="banner justify-content-center d-flex container-fluid mt-2 mb-2">
-        <a href="{{ url_for('index') }}"><img src="https://i.imgur.com/b9sdn9o.jpg" title="source: imgur.com" class="img-fluid"></a>
+    <div class="banner-holder justify-content-center d-flex container-fluid mt-2 mb-2">
+        <div class="banner">
+            <a href="{{ url_for('index') }}"><img src="https://i.imgur.com/b9sdn9o.jpg" title="source: imgur.com" class="img-fluid"></a>
+        </div>
     </div>
     <!-- content -->
     <div class="content">
@@ -82,8 +84,9 @@
             </div>
         </div>
     </footer>
-    <a href="#top" class="to-top" title="Back to top"><i class="fas fa-chevron-up"></i></a>
-
+    <div class="text-center">
+        <a href="#top" class="to-top" title="Back to top"><i class="fas fa-chevron-up"></i></a>
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>

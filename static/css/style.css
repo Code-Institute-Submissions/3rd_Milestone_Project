@@ -50,17 +50,14 @@ ul#mobile-demo.sidenav.navbar-link li {
 
 /***  Banner  ***/
 
-.banner{
+.banner-holder {
     background-color: #fffbf2;
-}
-
-.banner.container-fluid{
     padding-left: 0;
     padding-right: 0;
 }
 
 .banner img{
-    width: 83vw;
+    width: 100vw;
     height: 18vh;
     object-fit: cover;
     overflow: hidden;
@@ -75,7 +72,7 @@ ul#mobile-demo.sidenav.navbar-link li {
 }
 
 .all-cards:hover{
-    background-color: #f8f3ed;
+    background-color: #fce8cc;
 }
 
 .all-card-photos{
@@ -153,6 +150,11 @@ ul.procedure-list{
     text-decoration: underline;
 }
 
+.index-header a h3:hover {
+    color:  #c2793d;
+    transform: scale(1.1)
+}
+
 .product-name {
     font-family: "Merriweather", sans-serif;
 }
@@ -160,6 +162,7 @@ ul.procedure-list{
 /****   Modal    ****/
 .modal-content{
     background-color: #f7d7a8; 
+    font-family: "Merriweather", sans-serif;
 }
 
 .modal .modal-footer{
@@ -170,12 +173,16 @@ ul.procedure-list{
     height: 189px;
 }
 
-.modal-close, .modal-delete{
+#modal2 {
+    height: 200px;
+}
+
+.modal-close, .modal-delete, .modal-back{
     background-color: #c2793d; 
     color:  #fce8cc;
 }
 
-.modal-close:hover, .modal-delete:hover {
+.modal-close:hover, .modal-delete:hover, .modal-back:hover{
     text-decoration: none;
     background-color: #7b3d11;
     color:  #fffbf2;
@@ -189,6 +196,11 @@ ul.procedure-list{
 .footer-area a, .footer-area p, .copyright {
     color: #ffdead;
     font-family: "Roboto", sans-serif;
+}
+
+.footer-area a:hover {
+    color: #7b3d11;
+    text-decoration: none;
 }
 
 
@@ -213,12 +225,19 @@ ul.procedure-list{
     color: #fffbf2; 
 }
 
+a.to-top i{
+    color: #7b3d11;
+}
+a.to-top i:hover{
+    transform: scale(1.5);
+}
+
 /****  Media Queries  ****/
 
-@media only screen and (max-width: 576px){
+@media only screen and (min-width: 992px){
     .banner img{
-        width: 100vw;
-        height: 18vh;
+        width: 83vw;
+        height: 12vh;
         object-fit: cover;
         overflow: hidden;
     }

@@ -12,22 +12,33 @@
             </div>
             <div class="form-group">
                 <label for="serving-size">Servings: </label>
-                <input type="number" min="1" max="100" class="form-control" id="serving_size" name="serving_size" placeholder="How much does this recipe make?" required>
+                <input type="number" min="1" max="100" class="form-control" id="serving_size" name="serving_size" placeholder="How much does this recipe make? Enter a number." required>
             </div>
             <div class="input-field col-12">
                 <label for="ingredients">Ingredients</label>
-                <textarea class="materialize-textarea form-control" id="ingredients" name="ingredients" placeholder="Share the secret ingredients. Enter each entry." minlength="5" required></textarea>
+                <textarea class="materialize-textarea form-control" id="ingredients" name="ingredients" placeholder="Share the secret ingredients. Press enter after each item." minlength="5" required></textarea>
             </div>
             <div class="input-field col-12">
                 <label for="procedure">Procedure</label>
-                <textarea class="materialize-textarea form-control" id="procedure" name="procedure" placeholder="So how do we do it? Enter each entry" minlength="5" required></textarea>
+                <textarea class="materialize-textarea form-control" id="procedure" name="procedure" placeholder="So how do we do it? Press enter after each step." minlength="5" required></textarea>
             </div>
             <div class="form-group">
                 <label for="image">Recipe's photo</label>
-                <input type="url" class="form-control" id="image_url" name="image_url" placeholder="Curious how it looks" required>
+                <input type="url" class="form-control" id="image_url" name="image_url" placeholder="Curious how it looks. Enter image url." required>
             </div>
             <div class="buttonholder text-center">
-            <button type="submit" class="edit-button btn btn-primary mb-3">Submit</button>
+            <button data-target="modal2" class="edit-button btn mb-3 modal-trigger">Submit</button>
+                <div class="modal-holder d-flex">
+                    <div id="modal2" class="modal col-8 col-md-4">
+                        <div class="modal-content">
+                            <h4>Thank you for your contribution!</h4>
+                            <p>We have added your recipe.</p>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <a href="{{ url_for('get_all_recipes') }}"><button type="submit" class="modal-back btn-flat">Back to All Recipes page.</button></a>
+                        </div>
+                    </div>
+            </div>
             </div>
         </form>
     </div>
