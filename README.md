@@ -1,9 +1,9 @@
 
 <img src="https://i.imgur.com/CYJCaua.png" alt="website">
 
-### Code Institute Milestone Project 3 ###
+### Code Institute Milestone Project 3
 
-**Chocolatier**
+# **Chocolatier**
 ============
 
 An all-chocolate website where users can contribute recipes and get recommendations for essential baking tools. 
@@ -12,7 +12,7 @@ An all-chocolate website where users can contribute recipes and get recommendati
 
 ## UX 
 -------------
-### User stories ###
+### User stories
 
 As a user, I would like to:
 - create, read, edit and delete recipes.
@@ -67,7 +67,7 @@ Here are the list of programming languages, technologies, libraries, frameworks 
 - [MaterializeCSS](https://materializecss.com/) - used for additional styling and components like textarea and Modals
 - [Google Fonts](https://fonts.google.com/) - used for font-styles [Playfair](https://fonts.google.com/specimen/Playfair+Display?query=playfair), [Merriweather](https://fonts.google.com/specimen/Merriweather?query=merriweather), [Roboto](https://fonts.google.com/specimen/Roboto?query=roboto)
 - [Font Awesome](https://fontawesome.com/) - used for icons
-- [JQUery](https://jquery.com/) - used for eventhandling and animation 
+- [jQUery](https://jquery.com/) - used for eventhandling and animation 
 - [Jquery Validate Plugin](https://jqueryvalidation.org/) - a jquery plugin used for form validation
 - [Python 3.8.2](https://www.python.org/) - used for building a connection between Mongodb database and Flask app
 - [Flask](https://pypi.org/project/Flask/) - used as the project's framework, Flask uses dependencies and store them in ````requirements.txt```` to build environments.
@@ -76,7 +76,7 @@ Here are the list of programming languages, technologies, libraries, frameworks 
 - [Heroku](https://www.heroku.com/home) - used for hosting this project. Github cannot host Python project. Requires ``requirements.txt``  and  ````Procfile````.
 - [Jquery Validate Plugin](https://jqueryvalidation.org/) - a jquery plugin used for form validation
 
-## Testing ##
+## Testing
 -------------------------
 ### Manual Testing
 
@@ -90,23 +90,154 @@ I used Google Developer tools to test different components
 2. Form validation
     - Users are not allowed to submit a form without filling required input.
     - Throws an error message.
-    - Placeholders appear if case of blank lines.
+    - Placeholders appear in case of blank lines.
 
 3. Modal 
     - Appears everytime to confirm an action was made either by submission or deletion of recipe.
     - Redirects to the updated page.
 
-4. 
-    
+4. Submit button
+    - Disabled until form is completed.
 
+5. Product links
+    - opens in a new tab
 
-## Deployment ##
-------------------
 <!-- - HTML Validator Passed tests without issues
 - CSS Validator Passed tests without issues
 - JSHint Passed tests without issues
 - PEP8 and AUTOPEP8 -->
 
+## Deployment 
+------------------
+I use Gitpod IDE extension to clone Github repositories quickly. But you can do this too locally or on your chosen IDE.
 
-## Credits ##
+1. Clone or download the Zip from Github
 
+2. Make a new directory: 
+
+    ````
+    $ mkdir directory
+    ````
+
+    or  change directory to where you want to clone the repository:
+   
+    ````
+    $ cd directory
+    ````
+
+3. Initialize Git
+
+    ````
+    $ git init
+    ````
+
+4. Paste the clone link
+
+    ````
+    $ git clone https://github.com/loulunds/3rd_Milestone_Project.git
+    ````
+
+5. Install Flask 
+
+    ````
+    $ pip3 install Flask
+    ````
+
+6. Make a requirements.txt file. Be sure you have installed all your chosen dependencies. In this project, I used an additional dependency Flask-PyMongo
+
+    ````
+    pip3 freeze --local > requirements.txt
+    ````
+
+7. Don't forget the Procfile. 
+
+    ````
+    $ echo web: python app.py > Procfile
+    ````
+
+In this project you need to set up environment variables so you can keep your sensitive information safe like passwords
+
+1. Create an ``env.py`` and ``.gitignore`` file on root directory. Type env.py in your ``.gitignore`` file.
+
+2. In ``env.py`` type:
+
+    ````
+    import os
+    os.environ["variable name"] = "value of variable"
+    ````
+    In this project, I used Mongodb Atlas database so you need to make an account there then use "MONGO_URI" as variable and your MongoDB connection by going to ``Overview`` of your Cluster and click connect and choose option ``Connect your application`` and copy the link
+
+3. Add this to your ``app.py`` file
+
+    ````
+    from os import path
+    if path.exists("env.py") :
+        import env
+
+    ````
+4. Now you can add this to app.py and your sensitive information is safe
+
+    ````
+    app.config["MONGO_URI"] = os.environ.get('MONGO_URI', 'mongodb://localhost')
+    ````
+This project is hosted in Heroku, to do that:
+
+1. Create an app in Heroku
+
+2. In your terminal, login to Heroku
+
+    ````
+    heroku login -i
+    ````
+3. Go to ``deploy`` and find the similar link. This will clone the app from your terminal. 
+
+    ````
+    $ heroku git:clone -a <app-name>
+    ````
+
+4. Before pushing, check if you have updated ``requirements.txt`` and ``Procfile`` then add variables to ``Config Variables`` option.
+    
+    ````
+    <key>            <value>
+    MONGO_URI     <your Mongo_URI link>
+    IP            0.0.0.0
+    PORT          5000
+    SECRET_KEY    <SECRETKEY> if you have
+
+5. if you have everything above, time to push to master
+
+    ````
+    $ git push origin master
+    ````
+
+## Credits
+-------------------------------------------
+
+### Images 
+
+- [Pixabay](https://pixabay.com/) - for free images
+
+- [Imgur](https://imgur.com/) - for hosting my images
+
+### Recipes
+- [Google](https://www.google.com/) - for yummy chocolate recipes
+
+### Codes
+- [Stack Overflow](https://stackoverflow.com/)
+
+- [Bootstrap](https://getbootstrap.com/)
+
+- [MaterializeCSS](https://materializecss.com/)
+
+- [Jinja](https://jinja.palletsprojects.com/)
+
+## Acknowledgements
+----------------------
+Thanks to my mentor, Dick Vlaanderen and to the tutor and student care support personnels of Code Institute.
+Also, to the thousands of contributor in Slack and Slack Overflow.
+
+## Disclaimer
+------------
+This project is for educational purposes only. 
+
+[Back to top ↑](### Code Institute Milestone Project 3)

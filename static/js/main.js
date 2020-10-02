@@ -13,7 +13,9 @@ $(document).ready(function(){
         });
     $('.modal').modal();
     $('#commentForm').validate();
-
+/** 
+ * Submit button is disabled until form is completed 
+*/
     $('.submit-button').attr('disabled', true);
     $('.form-control').on('keyup', function () {
         var textarea_value = $(this).val();
