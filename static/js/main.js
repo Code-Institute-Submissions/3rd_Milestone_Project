@@ -12,5 +12,15 @@ $(document).ready(function(){
         return false;
         });
     $('.modal').modal();
-    $("#commentForm").validate();
+    $('#commentForm').validate();
+
+    $('.submit-button').attr('disabled', true);
+    $('.form-control').on('keyup', function () {
+        var textarea_value = $(this).val();
+        if (textarea_value != '') {
+            $('input[type="submit"]').attr('disabled', false);
+        } else {
+            $('input[type="submit"]').attr('disabled', true);
+        }
+    })
 })

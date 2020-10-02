@@ -9,7 +9,9 @@
         {% for recipe in recipes %}
             <div class="all-recipe d-flex justify-content-center col-12 col-md-4">
                 <div class="card all-cards">
-                    <img src="{{recipe.image_url}}" class="card-img-top all-card-photos" alt="food">
+                    <a href="{{ url_for('whole_recipe', recipe_id=recipe._id)}}">
+                        <img src="{{recipe.image_url}}" class="card-img-top all-card-photos" alt="food">
+                    </a>
                     <div class="card-body">
                         <p class="card-title">{{recipe.recipe_title}}</p>  
                     </div>

@@ -17,7 +17,7 @@
     </div>
     <div class="recipe container row d-flex">
         {% for recipe in recipes %}
-            {% if loop.index <= 3 %}
+            {% if loop.index < 4 %}
                 <div class="recipe d-flex justify-content-center col-12 col-md-4">
                     <div class="card all-cards">
                         <a href="{{ url_for('whole_recipe', recipe_id=recipe._id)}}">
@@ -39,7 +39,7 @@
     </div>
     <div class="product container row d-flex">
         {% for product in products %}
-            {% if loop.index <= 3 %}
+            {% if loop.index < 4 %}
                 <div class="product col-12 col-md-4 d-flex justify-content-center">
                     <div class="card all-cards">
                         <a href="https://www.amazon.com/baking-tools-accessories/b?ie=UTF8&node=289719" target="_blank">

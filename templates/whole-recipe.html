@@ -36,11 +36,13 @@
     <div class="container row">
         <h5>Product we recommend:</h5>
             {% for product in products %}
-                {% if loop.index <= 1 %}
+                {% if loop.index < 2 %}
                 <div class="row">
                     <div class="container col-12 col-sm-8">
                         <h5 class="product-name mb-2">{{ product.product_name }}</h5>
-                            <img src="{{product.product_photo}}" class="product-image img-fluid z-depth-5" alt="tools">
+                            <a href="https://www.amazon.com/baking-tools-accessories/b?ie=UTF8&node=289719" target="_blank">
+                                <img src="{{product.product_photo}}" class="product-image img-fluid z-depth-5" alt="tools">
+                            </a>
                     </div>
                     {% endif %}
                 {% endfor %}
