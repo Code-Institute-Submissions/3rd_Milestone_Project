@@ -15,13 +15,19 @@ An all-chocolate website where users can contribute recipes and get recommendati
 ### User stories
 
 As a user, I would like to:
-- create, read, edit and delete recipes.
+
+- find chocolate recipes in one website so I do bake recipes myself.
+- submit my own recipes and other users can submit their own too.
+- update my own recipes and other people's recipes.
+- delete my own recipes and other people's recipes.
+- easily view the website while I am baking and easily shift from mobile to desktop and vice versa.
+- manouver through the website with ease.
 - to buy baking tools recommended by the recipes.
 
 
 As a seller, I would like to: 
 
-- showcase my products alongside baking recipes
+- showcase my baking products alongside with chocolate recipes.
 - sell baking tools to a target audience.
 
 ### Mockup
@@ -55,7 +61,7 @@ Since the main goal of this project is to create, read, edit and delete records 
 ### Future Features
 - User login - This project did not require a user login that is why I did not include it. Although, it would be optimal for websites like this to have a user login so not anyone can edit and delete data. This project is mainly for CRUD operations.
 - Search option - I did not include a search option because my website is already narrowed down to one subject, CHOCOLATE, and the products I included were baking products mostly used with chocolates. A search option right now would be unnecessary.
-- Product page - I did not include a product page because I want to focus on the CRUD operations for the recipes. The products were secondary.
+- Product page - I did not include a product page because I want to focus on the CRUD operations for the recipes. 
 
 ## Technologies Used ##
 
@@ -68,13 +74,12 @@ Here are the list of programming languages, technologies, libraries, frameworks 
 - [Google Fonts](https://fonts.google.com/) - used for font-styles [Playfair](https://fonts.google.com/specimen/Playfair+Display?query=playfair), [Merriweather](https://fonts.google.com/specimen/Merriweather?query=merriweather), [Roboto](https://fonts.google.com/specimen/Roboto?query=roboto)
 - [Font Awesome](https://fontawesome.com/) - used for icons
 - [jQUery](https://jquery.com/) - used for eventhandling and animation 
-- [Jquery Validate Plugin](https://jqueryvalidation.org/) - a jquery plugin used for form validation
 - [Python 3.8.2](https://www.python.org/) - used for building a connection between Mongodb database and Flask app
 - [Flask](https://pypi.org/project/Flask/) - used as the project's framework, Flask uses dependencies and store them in ````requirements.txt```` to build environments.
 - [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) - used for handling templates
 - [MongoDb Atlas](https://www.mongodb.com/cloud/atlas) - MongoDB cloud service used for making document database that stores JSON-like documents
 - [Heroku](https://www.heroku.com/home) - used for hosting this project. Github cannot host Python project. Requires ``requirements.txt``  and  ````Procfile````.
-- [Jquery Validate Plugin](https://jqueryvalidation.org/) - a jquery plugin used for form validation
+
 
 ## Testing
 
@@ -90,7 +95,7 @@ I used Google Developer tools to test different components
 2. Form validation
     - Users are not allowed to submit a form without filling required input.
     - Throws an error message.
-    - Placeholders appear in case of blank lines.
+    - Placeholders guides the user to write the right input.
 
 3. Modal 
     - Appears everytime to confirm an action was made either by submission or deletion of recipe.
@@ -98,14 +103,36 @@ I used Google Developer tools to test different components
 
 4. Submit button
     - Disabled until form is completed.
+    - does not allow submission of incomplete form
 
 5. Product links
     - opens in a new tab
 
-<!-- - HTML Validator Passed tests without issues
-- CSS Validator Passed tests without issues
-- JSHint Passed tests without issues
-- PEP8 and AUTOPEP8 -->
+## Code Validator tests
+
+- [HTML Validator](https://validator.w3.org/) Passed tests except for one document
+
+    1. on  ``whole-recipe`` file, 
+    ````
+    Element div not allowed as child of element ul in this context.
+    ````
+
+- [CSS Validator](https://jigsaw.w3.org/) 
+    
+    Passed tests, no errors found
+
+- [JSHint](https://jshint.com/)
+
+    found one issue 
+    ````	
+    'Trailing comma in arguments lists' is only available in ES8 (use 'esversion: 8').
+    ````
+
+- [PEP8](http://pep8online.com/) 
+
+    Passed test, no errors found
+
+### Browser Testing
 
 ## Deployment 
 

@@ -160,21 +160,26 @@ ul.procedure-list{
 }
 
 /****   Modal    ****/
-.modal-content{
+.modal-content {
     background-color: #f7d7a8; 
     font-family: "Merriweather", sans-serif;
 }
 
-.modal .modal-footer{
+.modal .modal-footer {
     background-color: #fce8cc;
 }
 
-.modal{
+.modal {
     height: 189px;
+    overflow:hidden;
+}
+
+.modal-content {
+    overflow:auto;
 }
 
 #modal2 {
-    height: 200px;
+    height: 235px;
 }
 
 .modal-close, .modal-delete, .modal-back{

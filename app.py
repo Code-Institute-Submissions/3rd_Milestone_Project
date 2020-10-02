@@ -1,10 +1,11 @@
+from flask import Flask, redirect, request, render_template, url_for
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 import os
 from os import path
 if path.exists("env.py"):
     import env
-from flask import Flask, redirect, request, render_template, url_for
-from flask_pymongo import PyMongo
-from bson.objectid import ObjectId
+
 
 
 app = Flask(__name__)
