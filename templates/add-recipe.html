@@ -5,7 +5,7 @@
     <h3 >Want to add a recipe?</h3>
     </div>
     <div class="container">
-        <form action="{{ url_for('insert_recipe') }}" id="commentForm" method="POST">
+        <form action="{{ url_for('insert_recipe') }}" method="POST">
             <div class="form-group">
                 <label for="recipe_title">Title</label>
                 <input type="text" class="form-control" id="recipe_title" name="recipe_title" placeholder="What's your recipe's name?" minlength="2" required>
@@ -16,34 +16,32 @@
             </div>
             <div class="input-field col-12">
                 <label for="ingredients">Ingredients</label>
-                <textarea class="materialize-textarea form-control" id="ingredients" name="ingredients" placeholder="Share the secret ingredients. Press enter after each item." minlength="5" required></textarea>
+                <textarea class="form-control materialize-textarea" id="ingredients" name="ingredients" placeholder="Share the secret ingredients. Press enter after each item." minlength="5" required></textarea>
             </div>
             <div class="input-field col-12">
                 <label for="procedure">Procedure</label>
-                <textarea class="materialize-textarea form-control" id="procedure" name="procedure" placeholder="So how do we do it? Press enter after each step." minlength="5" required></textarea>
+                <textarea class="form-control materialize-textarea" id="procedure" name="procedure" placeholder="So how do we do it? Press enter after each step." minlength="5" required></textarea>
             </div>
             <div class="form-group">
                 <label for="image_url">Recipe's photo</label>
                 <input type="url" class="form-control" id="image_url" name="image_url" placeholder="Curious how it looks. Enter image url." required>
             </div>
-            <div class="buttonholder text-center">
-            <button class="btn mb-3 modal-trigger" data-target="modal2">Submit</button>
-                <div class="modal-holder d-flex">
-                    <div class="modal col-8 col-md-4" id="modal2">
-                        <div class="modal-content">
-                            <h4>Thank you for your contribution!</h4>
-                            <p>Please make sure all fields are filled.</p>
-                        </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <a href="{{ url_for('get_all_recipes') }}" class="button modal-back btn-flat">Back to All Recipes page.
-                            <!-- <button class="modal-back btn-flat">Back to All Recipes page.
-                            </button> -->
-                            </a>
-                        </div>
-                    </div>
-            </div>
+            <div class="text-center">
+                <button data-target="#modal2" class="btn mb-3 modal-trigger">Submit</button>
             </div>
         </form>
+        <div class="modal-holder d-flex">
+            <div class="modal col-8 col-md-4" id="modal2">
+                <div class="modal-content">
+                    <h4>Thank you for your contribution!</h4>
+                    <p>Please make sure all fields are filled.</p>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <a href="{{ url_for('get_all_recipes') }}" class="button modal-back btn-flat">Back to All Recipes page.
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock %} 

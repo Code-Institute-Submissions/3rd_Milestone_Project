@@ -45,7 +45,7 @@ Since the main goal of this project is to create, read, edit and delete records 
 - Uniform cards - Users will have great ease scanning for reipes because of the uniformity of the layout of the recipe cards.
 - Page updates - Users are redirected to updated pages upon submission, revision or deletion of a recipe. 
 - Form validation - Users will not be allowed to submit a form if a field is left blank or if the required input type is not met.
-- Modals - Modals are used to confirm a submission or deletion of a recipe. During deletions, users can choose to either confirm and will be directed back to the updated All Recipes page or to cancel. During revisions, users are given a confirmation message that their recipe has been added.
+- Modals - Modals are used to confirm a deletion of a recipe. During deletions, users can choose to either confirm and will be directed back to the updated All Recipes page or to cancel.
 - Randomized product recommendation - A random product will be recommended upon opening a whole recipe. I made this by using 
 
     ```products=mongo.db.products.aggregate([{'$sample': {'size': 3}}])```
@@ -62,6 +62,7 @@ Since the main goal of this project is to create, read, edit and delete records 
 - User login - This project did not require a user login that is why I did not include it. Although, it would be optimal for websites like this to have a user login so not anyone can edit and delete data. This project is mainly for CRUD operations.
 - Search option - I did not include a search option because my website is already narrowed down to one subject, CHOCOLATE, and the products I included were baking products mostly used with chocolates. A search option right now would be unnecessary.
 - Product page - I did not include a product page because I want to focus on the CRUD operations for the recipes. 
+- Pagination - I will add pagination if the recipes begin to increase in number.
 
 ## Technologies Used ##
 
@@ -108,7 +109,7 @@ I used Google Developer tools to test different components
 5. Product links
     - opens in a new tab
 
-## Code Validator tests
+### Code Validator tests
 
 - [HTML Validator](https://validator.w3.org/) Passed tests except for one document
 
@@ -134,6 +135,28 @@ I used Google Developer tools to test different components
 
 ### Browser Testing
 
+No issues found 
+
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge
+
+### Mobile Testing
+
+No issues found
+
+-   Samsung Galaxy Note 10 plus
+-   Iphone 4
+-   Iphone 8 plus
+-   Samsung Note 9
+
+-   Samsung Galaxy tab has some issue with parallax layout
+
+### Desktop and laptop Testing
+
+No issues found
+
+
 ## Deployment 
 
 I use Gitpod IDE extension to clone Github repositories quickly. But you can do this too locally or on your chosen IDE.
@@ -152,47 +175,31 @@ I use Gitpod IDE extension to clone Github repositories quickly. But you can do 
     $ cd directory
     ````
 
-3. Initialize Git
-
-    ````
-    $ git init
-    ````
-
-4. Paste the clone link
+3. Paste the clone link
 
     ````
     $ git clone https://github.com/loulunds/3rd_Milestone_Project.git
     ````
 
-5. Install Flask 
-
-    ````
-    $ pip3 install Flask
-    ````
-
-6. Make a requirements.txt file. Be sure you have installed all your chosen dependencies. In this project, I used an additional dependency Flask-PyMongo
+4. Update the ``requirements.txt`` file if you need to used additional dependencies. Procfile is already included in the repo. These two are Heroku's requirement to build the app.
 
     ````
     pip3 freeze --local > requirements.txt
     ````
 
-7. Don't forget the Procfile. 
+In this project you need to set up environment variables so you can keep your sensitive information safe like passwords. You can do this by:
 
-    ````
-    $ echo web: python app.py > Procfile
-    ````
+1. Update the ``env.py`` and ``.gitignore`` file on root directory. ``env.py`` should be typed in your ``.gitignore`` file.
 
-In this project you need to set up environment variables so you can keep your sensitive information safe like passwords
-
-1. Create an ``env.py`` and ``.gitignore`` file on root directory. Type env.py in your ``.gitignore`` file.
-
-2. In ``env.py`` type:
+2. In ``env.py`` there should be:
 
     ````
     import os
     os.environ["variable name"] = "value of variable"
     ````
-    In this project, I used Mongodb Atlas database so you need to make an account there then use "MONGO_URI" as variable and your MongoDB connection by going to ``Overview`` of your Cluster and click connect and choose option ``Connect your application`` and copy the link
+    -   In this project, I used Mongodb Atlas database so you need to make an account there then use ``"MONGO_URI"`` as variable and your MongoDB connection by going to ``Overview`` of your Cluster and click connect and choose option ``Connect your application`` and copy the link
+    
+    -   Paste the link in your "value of variable"
 
 3. Add this to your ``app.py`` file
 
@@ -216,13 +223,13 @@ This project is hosted in Heroku, to do that:
     ````
     heroku login -i
     ````
-3. Go to ``deploy`` and find the similar link. This will clone the app from your terminal. 
+3. Go to ``deploy`` and find the clone link:
 
     ````
     $ heroku git:clone -a <app-name>
     ````
 
-4. Before pushing, check if you have updated ``requirements.txt`` and ``Procfile`` then add variables to ``Config Variables`` option.
+4. Before pushing, add variables to ``Config Variables`` option in Heroku.
     
     ````
     <key>            <value>
@@ -231,10 +238,10 @@ This project is hosted in Heroku, to do that:
     PORT          5000
     SECRET_KEY    <SECRETKEY> if you have
 
-5. if you have everything above, time to push to master
+5. if you have everything above
 
     ````
-    $ git push origin master
+    $ git push heroku master
     ````
 
 ## Credits
