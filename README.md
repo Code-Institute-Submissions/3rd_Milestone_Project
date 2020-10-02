@@ -28,11 +28,12 @@ As a user, I would like to:
 As a seller, I would like to: 
 
 - showcase my baking products alongside with chocolate recipes.
+- recommend products for every recipe in the webisite.
 - sell baking tools to a target audience.
 
 ### Mockup
 
-Since the main goal of this project is to create, read, edit and delete records from the Mongodb database, I did a basic design so the user can easily manouver around the website and to manipulate the data. I did as much as possible gave each route a separate page and a confirmation message that a submission and deletion of entry was made.
+Since the main goal of this project is to create, read, edit and delete records from the Mongodb database, I did a basic design so the user can easily manouver around the website and to manipulate the data. I did as much as possible gave each route a separate page and a confirmation message that a deletion of an entry will be made.
 
 [Mobile wireframes](https://i.imgur.com/un7WiC3.png)
 
@@ -84,7 +85,7 @@ Here are the list of programming languages, technologies, libraries, frameworks 
 
 ## Testing
 
-### Manual Testing
+### A. Manual Testing
 
 I used Google Developer tools to test different components
 
@@ -109,7 +110,7 @@ I used Google Developer tools to test different components
 5. Product links
     - opens in a new tab
 
-### Code Validator tests
+### B. Code Validator testing
 
 - [HTML Validator](https://validator.w3.org/) Passed tests except for one document
 
@@ -133,17 +134,17 @@ I used Google Developer tools to test different components
 
     Passed test, no errors found
 
-### Browser Testing
+### C. Browser Testing
 
-No issues found 
+####    No issues found 
 
-- Google Chrome
-- Mozilla Firefox
-- Microsoft Edge
+-   Google Chrome
+-   Mozilla Firefox
+-   Microsoft Edge
 
-### Mobile Testing
+### D. Mobile Testing
 
-No issues found
+#### No issues found
 
 -   Samsung Galaxy Note 10 plus
 -   Iphone 4
@@ -152,9 +153,9 @@ No issues found
 
 -   Samsung Galaxy tab has some issue with parallax layout
 
-### Desktop and laptop Testing
+### E. Desktop and laptop Testing
 
-No issues found
+#### No issues found
 
 
 ## Deployment 

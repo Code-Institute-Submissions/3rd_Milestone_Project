@@ -1,6 +1,7 @@
 {% extends 'base.html' %} 
 {% block content %}
 
+    <!-- form is used to easily enter documents in the database -->
     <div class="title-header text-center">
     <h3 >Want to add a recipe?</h3>
     </div>
@@ -27,21 +28,9 @@
                 <input type="url" class="form-control" id="image_url" name="image_url" placeholder="Curious how it looks. Enter image url." required>
             </div>
             <div class="text-center">
-                <button data-target="#modal2" class="btn mb-3 modal-trigger">Submit</button>
+                <button class="btn mb-3">Submit</button>
             </div>
         </form>
-        <div class="modal-holder d-flex">
-            <div class="modal col-8 col-md-4" id="modal2">
-                <div class="modal-content">
-                    <h4>Thank you for your contribution!</h4>
-                    <p>Please make sure all fields are filled.</p>
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <a href="{{ url_for('get_all_recipes') }}" class="button modal-back btn-flat">Back to All Recipes page.
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
 
 {% endblock %} 

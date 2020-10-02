@@ -7,7 +7,6 @@ if path.exists("env.py"):
     import env
 
 
-
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'recipeDB'
@@ -19,6 +18,9 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/index')
 def index():
+    """
+        Used to render Index.html
+    """
     return render_template(
             'index.html',
             recipes=mongo.db.recipes.find(),
@@ -28,6 +30,9 @@ def index():
 
 @app.route('/get_all_recipes')
 def get_all_recipes():
+    """
+        Used to render all recipes
+    """
     return render_template(
         'all-recipes.html',
         recipes=mongo.db.recipes.find()
@@ -36,6 +41,9 @@ def get_all_recipes():
 
 @app.route('/whole_recipe/<recipe_id>')
 def whole_recipe(recipe_id):
+    """
+        Used to render a whole recipe chosen by user
+    """
     the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     return render_template(
         'whole-recipe.html',
@@ -47,7 +55,7 @@ def whole_recipe(recipe_id):
 @app.route('/add_recipe')
 def add_recipe():
     """
-        Used to render add recipe form
+        Used to render add-recipe form
     """
     return render_template('add-recipe.html')
 
@@ -94,6 +102,9 @@ def update_recipe(recipe_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
+    """
+        Deletes a chosen recipe by the user
+    """
     mongo.db.recipes.delete_one({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_all_recipes'))
 

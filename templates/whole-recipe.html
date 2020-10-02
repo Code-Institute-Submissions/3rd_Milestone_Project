@@ -35,6 +35,8 @@
     </div>
     <div class="container row">
         <h5>Product we recommend:</h5>
+        <!-- for loop is used to render the jinja template for every item in the expression
+         the loop index will return the number of items to be rendered-->
             {% for product in products %}
                 {% if loop.index < 2 %}
                 <div class="row">

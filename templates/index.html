@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
     <div class="d-none d-md-block row">
         <div class="parallax-container justify-content-center">
             <div class="parallax col-xl-8 offset-2 col-lg-8 offset-2 mt-2 mb-2">
@@ -16,6 +17,8 @@
         <p></p>
     </div>
     <div class="recipe container row d-flex">
+    <!-- for loop is used to render the jinja template for every item in the expression to avoid repetition of codes
+         the loop index will return the number of items to be rendered-->
         {% for recipe in recipes %}
             {% if loop.index < 4 %}
                 <div class="recipe d-flex justify-content-center col-12 col-md-4">
@@ -38,6 +41,8 @@
         </div>
     </div>
     <div class="product container row d-flex">
+    <!-- for loop is used to render the jinja template for every item in the expression to avoid repetition of codes
+         the loop index will return the number of items to be rendered-->
         {% for product in products %}
             {% if loop.index < 4 %}
                 <div class="product col-12 col-md-4 d-flex justify-content-center">
@@ -54,4 +59,5 @@
             {% endif %}
         {% endfor %}
     </div>
+
 {% endblock %}

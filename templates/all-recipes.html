@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-
+    
     <div class="title-header text-center">
         <h3>All Recipes</h3>
     </div>
     <div class="container row">
     <br>
+        <!-- for loop to render the jinja template for every item in the expression to avoid repetition of codes -->
         {% for recipe in recipes %}
             <div class="all-recipe d-flex justify-content-center col-12 col-md-4">
                 <div class="card all-cards">
