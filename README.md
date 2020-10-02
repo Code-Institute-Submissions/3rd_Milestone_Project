@@ -3,15 +3,15 @@
 
 ### Code Institute Milestone Project 3
 
-# **Chocolatier**
-============
+# **Chocolatier** 
+
 
 An all-chocolate website where users can contribute recipes and get recommendations for essential baking tools. 
 
 <img src="https://i.imgur.com/b9sdn9o.jpg" alt="banner">
 
 ## UX 
--------------
+
 ### User stories
 
 As a user, I would like to:
@@ -33,7 +33,7 @@ Since the main goal of this project is to create, read, edit and delete records 
 [Desktop wireframes](https://i.imgur.com/ew0vM1t.png)
 
 ## Features 
-------------------
+
 ### Existing Features
 - Sidenavbar - For mobile view, users can navigate the website through the sidenavbar or the links in the footer.
 - Uniform cards - Users will have great ease scanning for reipes because of the uniformity of the layout of the recipe cards.
@@ -58,7 +58,7 @@ Since the main goal of this project is to create, read, edit and delete records 
 - Product page - I did not include a product page because I want to focus on the CRUD operations for the recipes. The products were secondary.
 
 ## Technologies Used ##
----------------------------
+
 Here are the list of programming languages, technologies, libraries, frameworks and plugin used for this website:
 
 - HTML
@@ -77,7 +77,7 @@ Here are the list of programming languages, technologies, libraries, frameworks 
 - [Jquery Validate Plugin](https://jqueryvalidation.org/) - a jquery plugin used for form validation
 
 ## Testing
--------------------------
+
 ### Manual Testing
 
 I used Google Developer tools to test different components
@@ -108,7 +108,7 @@ I used Google Developer tools to test different components
 - PEP8 and AUTOPEP8 -->
 
 ## Deployment 
-------------------
+
 I use Gitpod IDE extension to clone Github repositories quickly. But you can do this too locally or on your chosen IDE.
 
 1. Clone or download the Zip from Github
@@ -211,7 +211,7 @@ This project is hosted in Heroku, to do that:
     ````
 
 ## Credits
--------------------------------------------
+
 
 ### Images 
 
@@ -232,12 +232,12 @@ This project is hosted in Heroku, to do that:
 - [Jinja](https://jinja.palletsprojects.com/)
 
 ## Acknowledgements
-----------------------
+
 Thanks to my mentor, Dick Vlaanderen and to the tutor and student care support personnels of Code Institute.
 Also, to the thousands of contributor in Slack and Slack Overflow.
 
 ## Disclaimer
-------------
+
 This project is for educational purposes only. 
 
-[Back to top ↑](### Code Institute Milestone Project 3)
+[Back to top](#)
