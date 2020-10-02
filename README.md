@@ -28,7 +28,7 @@ As a user, I would like to:
 As a seller, I would like to: 
 
 - showcase my baking products alongside with chocolate recipes.
-- recommend products for every recipe in the webisite.
+- recommend products for every recipe in the website.
 - sell baking tools to a target audience.
 
 ### Mockup
@@ -48,7 +48,7 @@ Since the main goal of this project is to create, read, edit and delete records 
 - Form validation - Users will not be allowed to submit a form if a field is left blank or if the required input type is not met.
 - Modals - Modals are used to confirm a deletion of a recipe. During deletions, users can choose to either confirm and will be directed back to the updated All Recipes page or to cancel.
 - Randomized product recommendation - A random product will be recommended upon opening a whole recipe. I made this by using 
-
+- Product links to Amazon - Since I did not include a product page, I linked the products to Amazon instead. 
     ```products=mongo.db.products.aggregate([{'$sample': {'size': 3}}])```
 
     to randomly get 3 products from the collection. Then use Jinja for and if loop to pick one from the 3 products. Otherwise, Jinja will throw a "TypeError: object of type 'Cursor' has no len()".
